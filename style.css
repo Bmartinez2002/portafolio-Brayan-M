@@ -78,3 +78,10 @@ footer {
     padding: 10px;
 }
 
+/* Estilo para el gráfico de torta */
+#aportesChart {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    height: auto;
+}
