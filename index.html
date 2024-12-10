@@ -1,17 +1,11 @@
-<DOCTYPE html>
-<!-- Enlazar los estilos de Swiper -->
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-<!-- Enlazar el script de Swiper -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Brayan Martínez</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -19,8 +13,6 @@
         <nav>
             <ul>
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre Mí</a></li>
-                <li><a href="#">Habilidades</a></li>
                 <li><a href="#">Proyectos</a></li>
                 <li><a href="#">Contactos</a></li>
             </ul>
@@ -28,54 +20,12 @@
     </header>
 
     <main>
-        <!-- Sección Sobre Mí -->
-        <section id="sobreMi">
-            <h2>Sobre Mí</h2>
-            <p>Mi nombre es Brayan Martínez García, soy un joven de 22 años apasionado por la tecnología. Actualmente, estoy estudiando Ingeniería en Sistemas con el objetivo de desarrollar soluciones tecnológicas que beneficien a la sociedad. Me interesa aprender sobre sistemas de información y contribuir al desarrollo tecnológico.</p>
-        </section>
-
-        <!-- Sección Habilidades -->
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <ul>
-                <li>SQL Developer</li>
-                <li>HTML</li>
-                <li>Postgres</li>
-                <li>Fortinet</li>
-                <li>Hikvision</li>
-                <li>Sophos</li>
-                <li>Servidores Active Directory (AD)</li>
-                <li>Plantas telefónicas Asterisk</li>
-                <li>Mesa de ayuda</li>
-                <li>MySQL</li>
-                <li>Consola de Administración Office 365</li>
-            </ul>
-        </section>
-
-        <!-- Sección Aportes a la Sociedad -->
-        <section id="aportes">
+        <section>
             <h2>Aportes a la Sociedad</h2>
             <p>En mi proceso académico como estudiante de Ingeniería en Sistemas, aporto a la sociedad de las siguientes maneras:</p>
-            
-            <!-- Swiper Container -->
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <h3>Aporte Académico</h3>
-                        <p>Me enfoco en adquirir conocimientos en áreas clave como bases de datos, programación y administración de sistemas para poder crear soluciones tecnológicas eficientes y mejorar el acceso a la información en diversas comunidades.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3>Aporte Humano</h3>
-                        <p>Estoy comprometido con el bienestar de las personas, participando en proyectos que promuevan el desarrollo personal y colectivo. Mi proyecto de superación personal busca inspirar a los jóvenes a mejorar sus vidas mediante el acceso a contenido motivacional.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3>Aporte Profesional</h3>
-                        <p>En el ámbito profesional, busco implementar soluciones tecnológicas que ayuden a mejorar la eficiencia operativa de las empresas. Además, me interesa desarrollar proyectos que tengan un impacto social, como mi aplicación enfocada en la superación personal.</p>
-                    </div>
-                </div>
+            <div id="aportesContainer">
+                <canvas id="aportesChart"></canvas>
             </div>
-            <!-- Fin Swiper Container -->
-
         </section>
     </main>
 
@@ -83,22 +33,27 @@
         <p>© 2024 Brayan Martínez García</p>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+        var ctx = document.getElementById('aportesChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Aporte Académico', 'Aporte Humano', 'Aporte Profesional'],
+                datasets: [{
+                    data: [40, 30, 30],
+                    backgroundColor: ['#FF5733', '#33FF57', '#3357FF'],
+                }]
             },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            loop: true
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+            }
         });
     </script>
 </body>
 </html>
-            
+
