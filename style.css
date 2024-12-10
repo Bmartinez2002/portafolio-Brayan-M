@@ -50,6 +50,17 @@ h1, h2, h3 {
     color: #333;
 }
 
+/* Sección de Habilidades */
+#habilidades ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+#habilidades li {
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
 /* Sección de Proyectos */
 #proyectos {
     background-color: #e2e2e2;
@@ -66,3 +77,4 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
