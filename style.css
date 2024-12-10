@@ -37,82 +37,82 @@ footer {
     padding: 10px;
 }
 
-/* Sección Sobre Mí */
-#sobreMi {
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-}
-
-#sobreMi h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-#sobreMi p {
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-
-/* Sección Habilidades */
-#habilidades {
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-}
-
-#habilidades h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-#habilidades ul {
-    list-style: none;
-    padding: 0;
-}
-
-#habilidades ul li {
-    font-size: 1.2em;
-    margin: 5px 0;
-}
-
-/* Estilos para el Swiper */
-.swiper-container {
-    width: 100%;
-    height: 350px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.swiper-slide {
-    background: #ff5733;
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    font-size: 1.1em;
+/* Separación del Título del Gráfico */
+#aportesContainer {
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    margin: 40px auto;
+    width: 100%;
+    max-width: 500px;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border-radius: 50%;
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.swiper-pagination-bullet {
-    background-color: #ff5733;
+/* Estilo para el gráfico de torta */
+#aportesChart {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px; /* Ajustar el tamaño máximo del gráfico */
+    height: auto;
+    animation: rotate 10s infinite linear; /* Animación de rotación */
+    transform-style: preserve-3d;
+    perspective: 1000px; /* Profundidad 3D */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.7);
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
 }
 
-/* Responsividad */
+/* Animación de rotación */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilos Responsivos */
 @media screen and (max-width: 768px) {
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
     footer {
         font-size: 0.8em;
+    }
+
+    #aportesChart {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 1.4em;
+    }
+
+    footer {
+        font-size: 0.7em;
+    }
+
+    #aportesChart {
+        max-width: 100%;
     }
 }
