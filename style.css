@@ -1,79 +1,37 @@
 /* Estilos Generales */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-color: #f4f4f4;
 }
 
-/* Estilos del Encabezado */
 header {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 10px;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
 }
 
 nav ul li {
     display: inline;
+    margin-right: 20px;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
-    display: block;
 }
 
-nav ul li a:hover {
-    background-color: #555;
-}
-
-/* Estilos de las Secciones */
-section {
-    padding: 20px;
-    margin: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-/* Sección de Habilidades */
-#habilidades ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
-
-#habilidades li {
-    margin: 8px 0;
-    font-size: 1.1em;
-}
-
-/* Sección de Proyectos */
-#proyectos {
-    background-color: #e2e2e2;
-}
-
-.proyecto {
-    margin-bottom: 20px;
-}
-
-/* Estilos del Pie de Página */
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 10px;
 }
@@ -81,7 +39,103 @@ footer {
 /* Estilo para el gráfico de torta */
 #aportesChart {
     display: block;
-    margin: 0 auto;
-    max-width: 80%;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px; /* Ajustar el tamaño máximo del gráfico */
     height: auto;
+    animation: rotate 10s infinite linear; /* Animación de rotación */
 }
+
+/* Animación de rotación */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilos de Secciones */
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 1.2em;
+}
+
+/* Estilo para enlaces */
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 1.6em;
+    }
+
+    ul li {
+        font-size: 1em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+
+    #aportesChart {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.4em;
+    }
+
+    ul li {
+        font-size: 0.9em;
+    }
+
+    footer {
+        font-size: 0.7em;
+    }
+
+    #aportesChart {
+        max-width: 100%;
+    }
+}
+
