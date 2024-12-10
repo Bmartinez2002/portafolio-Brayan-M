@@ -37,6 +37,47 @@ footer {
     padding: 10px;
 }
 
+/* Sección Sobre Mí */
+#sobreMi {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+#sobreMi h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#sobreMi p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Sección Habilidades */
+#habilidades {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+#habilidades h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#habilidades ul {
+    list-style: none;
+    padding: 0;
+}
+
+#habilidades ul li {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
 /* Separación del Título del Gráfico */
 #aportesContainer {
     text-align: center;
@@ -116,5 +157,6 @@ h2 {
         max-width: 100%;
     }
 }
+
 
 
