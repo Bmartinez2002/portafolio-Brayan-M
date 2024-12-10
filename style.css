@@ -78,83 +78,58 @@ footer {
     margin: 5px 0;
 }
 
-/* Separación del Título del Gráfico */
-#aportesContainer {
-    text-align: center;
-    margin: 40px auto;
+/* Estilos para las tarjetas giratorias */
+.tarjetas {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.tarjeta {
+    width: 30%;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.tarjeta:hover {
+    transform: rotateY(180deg);
+}
+
+.frente, .detras {
     width: 100%;
-    max-width: 500px;
-}
-
-h2 {
-    font-size: 2em;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 1.1em;
+    background-color: #ff5733;
+    color: #fff;
 }
 
-/* Estilo para el gráfico de torta */
-#aportesChart {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 400px; /* Ajustar el tamaño máximo del gráfico */
-    height: auto;
-    animation: rotate 10s infinite linear; /* Animación de rotación */
-    transform-style: preserve-3d;
-    perspective: 1000px; /* Profundidad 3D */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.7);
-    background: linear-gradient(45deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+.detras {
+    background-color: #33FF57;
+    transform: rotateY(180deg);
 }
 
-/* Animación de rotación */
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Estilos Responsivos */
+/* Responsividad */
 @media screen and (max-width: 768px) {
-    nav ul {
-        text-align: center;
+    .tarjetas {
+        flex-direction: column;
     }
 
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    section {
-        padding: 10px;
-    }
-
-    h2 {
-        font-size: 1.6em;
+    .tarjeta {
+        width: 100%;
     }
 
     footer {
         font-size: 0.8em;
-    }
-
-    #aportesChart {
-        max-width: 90%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    h2 {
-        font-size: 1.4em;
-    }
-
-    footer {
-        font-size: 0.7em;
-    }
-
-    #aportesChart {
-        max-width: 100%;
     }
 }
 
