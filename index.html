@@ -1,127 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Académico de Brayan Martínez</title>
-    <!-- Vincula los estilos CSS -->
+    <title>Portafolio Brayan Martínez</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Vincula la librería Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
-    <!-- Encabezado -->
     <header>
+        <h1>Mi Portafolio</h1>
         <nav>
             <ul>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proceso-academico">Proceso Académico</a></li>
-                <li><a href="#aportes">Aportes a la Sociedad</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Proyectos</a></li>
+                <li><a href="#">Contactos</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Contenido Principal -->
     <main>
-        <!-- Sección Sobre mí -->
-        <section id="sobre-mi">
-            <h1>Sobre mí</h1>
-            <p>Hola, soy Brayan Martínez, un joven de 22 años apasionado por la tecnología. Mi objetivo es culminar mis estudios en Ingeniería en Sistemas para crear soluciones tecnológicas que aporten a la sociedad.</p>
-        </section>
-
-        <!-- Sección Proceso Académico -->
-        <section id="proceso-academico">
-            <h2>Mi Proceso Académico</h2>
-            <p>Me encuentro estudiando Ingeniería en Sistemas, con el firme propósito de aprender y aplicar tecnologías que no solo mejoren mi vida profesional, sino que también contribuyan de manera significativa a mi entorno social. Mis estudios están enfocados en áreas como programación, bases de datos, redes y seguridad informática.</p>
-        </section>
-
-        <!-- Sección Aportes a la Sociedad con gráfico de torta -->
-        <section id="aportes">
+        <section>
             <h2>Aportes a la Sociedad</h2>
-            <p>Dentro de mi proceso académico, identifico tres puntos clave que me permiten aportar a la sociedad de manera significativa:</p>
-            
-            <!-- Gráfico de torta -->
-            <canvas id="aportesChart" width="400" height="400"></canvas>
-            
-            <p>Los tres puntos son los siguientes:</p>
-            <ul>
-                <li><strong>Desarrollo de soluciones tecnológicas:</strong> A través de mi formación en ingeniería en sistemas, busco crear soluciones tecnológicas que mejoren la vida diaria de las personas, optimizando procesos y facilitando el acceso a la información.</li>
-                <li><strong>Contribución a la educación:</strong> Mi proyecto de crear una aplicación enfocada en el contenido de superación personal tiene como objetivo ayudar a los estudiantes a crecer tanto en su desarrollo académico como en su bienestar emocional y personal.</li>
-                <li><strong>Impacto social positivo:</strong> Al aprender sobre tecnologías innovadoras, busco desarrollar herramientas que generen un impacto social positivo, ayudando a resolver problemas actuales y generando un cambio significativo en la comunidad.</li>
-            </ul>
-        </section>
-
-        <!-- Sección Habilidades -->
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <p>A lo largo de mi formación académica y experiencia profesional, he adquirido una amplia gama de habilidades técnicas que me permiten enfrentar diversos retos en el campo de la Ingeniería en Sistemas. Estas son algunas de mis habilidades clave:</p>
-            <ul>
-                <li><strong>SQL Developer</strong></li>
-                <li><strong>HTML</strong></li>
-                <li><strong>Postgres</strong></li>
-                <li><strong>Fortinet</strong></li>
-                <li><strong>Hikvision</strong></li>
-                <li><strong>Sophos</strong></li>
-                <li><strong>Servidores Active Directory (AD)</strong></li>
-                <li><strong>Plantas telefónicas Asterisk</strong></li>
-                <li><strong>Mesa de ayuda</strong></li>
-                <li><strong>MySQL</strong></li>
-                <li><strong>Consola de Administración Office 365</strong></li>
-            </ul>
-        </section>
-
-        <!-- Sección Contacto -->
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Si deseas contactarme para discutir proyectos, oportunidades profesionales o colaboraciones, puedes enviarme un mensaje a través de mi correo electrónico o LinkedIn.</p>
-            <a href="https://www.linkedin.com/in/brayan-martinez-garcia-338b9a22b/" target="_blank">Conéctate conmigo en LinkedIn</a>
+            <p>En mi proceso académico como estudiante de Ingeniería en Sistemas, aporto a la sociedad de las siguientes maneras:</p>
+            <div id="aportesContainer">
+                <canvas id="aportesChart"></canvas>
+            </div>
         </section>
     </main>
 
-    <!-- Pie de página -->
     <footer>
-        <p>&copy; 2024 Brayan Martínez</p>
+        <p>© 2024 Brayan Martínez García</p>
     </footer>
 
-    <!-- Vincula el archivo JavaScript -->
-    <script src="script.js"></script>
-
-    <!-- Script para generar el gráfico de torta -->
     <script>
         var ctx = document.getElementById('aportesChart').getContext('2d');
-        var aportesChart = new Chart(ctx, {
-            type: 'pie', // Tipo de gráfico
+        var chart = new Chart(ctx, {
+            type: 'pie',
             data: {
-                labels: ['Desarrollo de soluciones tecnológicas', 'Contribución a la educación', 'Impacto social positivo'],
-                datasets: [{
-                    label: 'Aportes a la Sociedad',
-                    data: [40, 30, 30], // Porcentajes o valores relativos de cada aporte
-                    backgroundColor: ['#36a2eb', '#ff9f40', '#ff6384'],
-                    borderColor: ['#fff', '#fff', '#fff'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw + '%';
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    </script>
-</body>
-
-</html>
+                labels: ['Aporte Académico', 'Aporte Humano', 'Aporte Profesional'],
+              
