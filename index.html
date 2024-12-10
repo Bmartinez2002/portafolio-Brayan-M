@@ -13,6 +13,8 @@
         <nav>
             <ul>
                 <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre Mí</a></li>
+                <li><a href="#">Habilidades</a></li>
                 <li><a href="#">Proyectos</a></li>
                 <li><a href="#">Contactos</a></li>
             </ul>
@@ -20,6 +22,31 @@
     </header>
 
     <main>
+        <!-- Sección Sobre Mí -->
+        <section id="sobreMi">
+            <h2>Sobre Mí</h2>
+            <p>Mi nombre es Brayan Martínez García, soy un joven de 22 años apasionado por la tecnología. Actualmente, estoy estudiando Ingeniería en Sistemas con el objetivo de desarrollar soluciones tecnológicas que beneficien a la sociedad. Me interesa aprender sobre sistemas de información y contribuir al desarrollo tecnológico.</p>
+        </section>
+
+        <!-- Sección Habilidades -->
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>SQL Developer</li>
+                <li>HTML</li>
+                <li>Postgres</li>
+                <li>Fortinet</li>
+                <li>Hikvision</li>
+                <li>Sophos</li>
+                <li>Servidores Active Directory (AD)</li>
+                <li>Plantas telefónicas Asterisk</li>
+                <li>Mesa de ayuda</li>
+                <li>MySQL</li>
+                <li>Consola de Administración Office 365</li>
+            </ul>
+        </section>
+
+        <!-- Sección Aportes a la Sociedad -->
         <section>
             <h2>Aportes a la Sociedad</h2>
             <p>En mi proceso académico como estudiante de Ingeniería en Sistemas, aporto a la sociedad de las siguientes maneras:</p>
@@ -39,4 +66,22 @@
             type: 'pie',
             data: {
                 labels: ['Aporte Académico', 'Aporte Humano', 'Aporte Profesional'],
+                datasets: [{
+                    data: [40, 30, 30],
+                    backgroundColor: ['#FF5733', '#33FF57', '#3357FF'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+            }
+        });
+    </script>
+</body>
+</html>
+
               
