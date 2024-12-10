@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Brayan Martínez</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <header>
@@ -50,33 +51,25 @@
             <h2>Aportes a la Sociedad</h2>
             <p>En mi proceso académico como estudiante de Ingeniería en Sistemas, aporto a la sociedad de las siguientes maneras:</p>
             
-            <!-- Tarjetas Giratorias -->
-            <div class="tarjetas">
-                <div class="tarjeta">
-                    <div class="frente">
+            <!-- Swiper Container -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
                         <h3>Aporte Académico</h3>
-                    </div>
-                    <div class="detras">
                         <p>Me enfoco en adquirir conocimientos en áreas clave como bases de datos, programación y administración de sistemas para poder crear soluciones tecnológicas eficientes y mejorar el acceso a la información en diversas comunidades.</p>
                     </div>
-                </div>
-                <div class="tarjeta">
-                    <div class="frente">
+                    <div class="swiper-slide">
                         <h3>Aporte Humano</h3>
-                    </div>
-                    <div class="detras">
                         <p>Estoy comprometido con el bienestar de las personas, participando en proyectos que promuevan el desarrollo personal y colectivo. Mi proyecto de superación personal busca inspirar a los jóvenes a mejorar sus vidas mediante el acceso a contenido motivacional.</p>
                     </div>
-                </div>
-                <div class="tarjeta">
-                    <div class="frente">
+                    <div class="swiper-slide">
                         <h3>Aporte Profesional</h3>
-                    </div>
-                    <div class="detras">
                         <p>En el ámbito profesional, busco implementar soluciones tecnológicas que ayuden a mejorar la eficiencia operativa de las empresas. Además, me interesa desarrollar proyectos que tengan un impacto social, como mi aplicación enfocada en la superación personal.</p>
                     </div>
                 </div>
             </div>
+            <!-- Fin Swiper Container -->
+
         </section>
     </main>
 
@@ -84,8 +77,22 @@
         <p>© 2024 Brayan Martínez García</p>
     </footer>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true
+        });
+    </script>
 </body>
 </html>
-
-
-              
+            
