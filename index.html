@@ -1,59 +1,130 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Brayan Martínez</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <header>
-        <h1>Mi Portafolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Proyectos</a></li>
-                <li><a href="#">Contactos</a></li>
-            </ul>
-        </nav>
-    </header>
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-    <main>
-        <section>
-            <h2>Aportes a la Sociedad</h2>
-            <p>En mi proceso académico como estudiante de Ingeniería en Sistemas, aporto a la sociedad de las siguientes maneras:</p>
-            <div id="aportesContainer">
-                <canvas id="aportesChart"></canvas>
-            </div>
-        </section>
-    </main>
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
 
-    <footer>
-        <p>© 2024 Brayan Martínez García</p>
-    </footer>
+nav ul {
+    list-style: none;
+    padding: 0;
+}
 
-    <script>
-        var ctx = document.getElementById('aportesChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Aporte Académico', 'Aporte Humano', 'Aporte Profesional'],
-                datasets: [{
-                    data: [40, 30, 30],
-                    backgroundColor: ['#FF5733', '#33FF57', '#3357FF'],
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                },
-            }
-        });
-    </script>
-</body>
-</html>
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilo para el gráfico de torta */
+#aportesChart {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px; /* Ajustar el tamaño máximo del gráfico */
+    height: auto;
+}
+
+/* Estilos de Secciones */
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 1.2em;
+}
+
+/* Estilo para enlaces */
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 1.6em;
+    }
+
+    ul li {
+        font-size: 1em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+
+    #aportesChart {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.4em;
+    }
+
+    ul li {
+        font-size: 0.9em;
+    }
+
+    footer {
+        font-size: 0.7em;
+    }
+
+    #aportesChart {
+        max-width: 100%;
+    }
+}
 
