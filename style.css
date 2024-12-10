@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
@@ -44,6 +45,14 @@ footer {
     max-width: 400px; /* Ajustar el tamaño máximo del gráfico */
     height: auto;
     animation: rotate 10s infinite linear; /* Animación de rotación */
+    transform-style: preserve-3d;
+    perspective: 1000px; /* Profundidad 3D */
+}
+
+/* Efecto Holográfico: Colores brillantes, resplandor */
+#aportesChart {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.7);
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
 }
 
 /* Animación de rotación */
@@ -138,4 +147,5 @@ a {
         max-width: 100%;
     }
 }
+
 
